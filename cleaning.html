@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./king.io/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="./king.io/css/main.css">
+    <style>
+        body{
+            color: aliceblue;
+        }
+        .book_cleaning{
+            height: 100vh;
+            color: aliceblue;
+            z-index: -1;
+        }
+        .overlay{
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(10px);
+        }
+        .porfilio{
+            background-color: transparent;
+            border: 3px solid #8a2be2;
+            padding: 1em;
+            padding-left: 2em;
+            display: flex;
+            flex-direction: column;
+           
+           
+           
+        }
+        .qualification{
+            display: flex;
+            align-items: center;
+            justify-content:left;
+            gap: 10px;
+
+
+        }
+        .qualification i{
+            font-size: 2em;
+            color: #8a2be2;
+           
+
+        }
+        .review-div{
+            background: linear-gradient(45deg, blueviolet,lightgreen) ;
+            width: 100%;
+            min-height: 20vh;
+            height: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+        }
+        .review{
+            border: 3px solid gray;
+            border-radius: 10px;
+            padding: 1em;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+           
+        }
+        .info{
+            flex: 1;
+            border: 3px solid gray;
+            padding: 0.8em;
+
+        }
+
+.user_dp img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.stars{
+    border: 3px solid gray;
+    
+    font-size: 2em;
+    color: gold;
+    border-radius: 30px;
+
+}
+.contact_us{
+    border: 3px solid lightgreen;
+    padding: 0.5em;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #fff;
+   /* background: rgba(233, 181, 233,0.5);*/
+    height: fit-content;
+    padding: 1em;
+}
+.form-input{
+    text-align: center;
+
+}
+input,select{
+    border: none;
+    background: transparent;
+    width: 90%;
+    border-bottom: 3px solid rgb(138, 43, 226) ;
+    
+    font-weight: 700;
+    padding: 1em;
+    border-radius: 30px;
+    color: gray;
+}
+button{
+    width: 100%;
+    border-radius: 0;
+    border: 0;
+    background: linear-gradient(to right, blueviolet 13%,rgb(233, 229, 236) ,blueviolet);
+    color: gray;
+    font-weight: 700;
+    padding: 1.2em 1.9em;
+}
+.product{
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .product-category{
+            padding: 0;
+            font-size: 30px;
+            font-weight: 500;
+            
+            text-transform: capitalize;
+        }
+        .slide-container{
+            padding: 0 ;
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+        .slide-container::-webkit-scrollbar{
+            display: none;
+        }
+        .slide-card{
+            flex: 0 0 auto;
+            width: 200px;
+            height: 200px;
+            margin-right: 40px;
+            
+        }
+        .slide-image{
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+
+        }
+        .slide-image img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .card-btn{
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            transform: translateX(0%);
+            padding: 10px;
+            width: 90%;
+            text-transform: capitalize;
+            border: none;
+            outline: none;
+            background-color: #fff;
+            border-radius: 5px;
+            transition: 0.5s;
+            cursor: progress;
+            opacity: 0;
+        }
+        .slide-card:hover .card-btn{
+            opacity: 1;
+        }
+        .card-btn:hover{
+            background-color: #009688;
+            cursor: #fff;
+
+        }
+       
+        .pre-btn,
+        .nxt-btn{
+            border: none;
+            width: 10vw;
+            height: 100%;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, #fff 100%);
+            cursor: pointer;
+            z-index: 9;
+        }
+        .pre-btn{
+            left: 0;
+        }
+        .nxt-btn{
+            right: 0;
+        }
+        .pre-btn,
+        .nxt-btn{
+            opacity: 0.2;
+        }
+        .pre-btn:hover,
+        .nxt-btn:hover{
+            opacity: 1;
+        }
+        .price{
+            padding: 20px 0;
+            background: rgb(153, 31, 153);
+        }
+        table{
+            margin: 0;
+            width: 100%;
+           
+        }
+        td img{
+            width: 100px;
+            height: 80px;
+        }
+        .packages{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .package{
+            background: rgba(233, 181, 233,0.7);
+            border: 3px solid rgb(138, 43, 226) ;
+            border-radius: 20px;
+            overflow: hidden;
+            width: 100%;
+            cursor: pointer;
+        }
+        .package-name{
+            text-align: center;
+            background: rgba(37, 6, 66,.3);
+            padding: .5em;
+            border: 3px solid rgb(138, 43, 226) ;
+            border-radius: 20px;
+        }
+        .package-list{
+            display: flex;
+            gap: 10px;
+        }
+        .package-list h3{
+            margin: 5px 0;
+            font-size: 1rem;
+        }
+        .package-list i{
+            font-size: 1.5em;
+            color: #e5d7f3;
+           
+
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <section class="book_cleaning bg-image header fixed " data-image="./images/banner2.jpg" data-gradient="5" id="header" ></section>
+        <section class=" lg-fixed md-static" style="background: rgba(233, 181, 233,0.3); z-index: -1;">
+            <div class="overlay row">
+                <div class="lg-col-4 md-col-9   sm-col-9 ">
+                    <div class="porfilio ">
+                        <div class="qualification">
+                             <i class="bi bi-check2-all"></i>
+                             <h3>Professional Cleaning service</h3>
+                        </div>
+                        <div class="qualification">
+                            <i class="bi bi-check2-all"></i>
+                            <h3>Residential and Commercial Cleaning</h3>
+                       </div>
+                       <div class="qualification">
+                            <i class="bi bi-check2-all"></i>
+                            <h3>Deep cleaning & Regular Maintenace</h3>
+                        </div>
+                        <div class="qualification">
+                            <i class="bi bi-check2-all"></i>
+                            <h3>Home, Office, Apartment, and more</h3>
+                        </div>
+                        <div class="qualification">
+                            <i class="bi bi-check2-all"></i>
+                            <h3>Fully insered and Trained staff</h3>
+                        </div>
+                        <div class="qualification">
+                            <i class="bi bi-check2-all"></i>
+                            <h3>Customized Cleaning Plans</h3>
+                        </div>
+                        <div class="qualification">
+                            <i class="bi bi-check2-all"></i>
+                            <h3>Flexible Scheduling</h3>
+                        </div>
+                    </div>
+                    
+                    <section class="product">
+                        <h2 class="product-category text-center">our gallary</h2>
+                        <button class="pre-btn">next</button>
+                        <button class="nxt-btn">back</button>
+                        <div class="slide-container">
+                            <div class="slide-card">
+                                <div class="slide-image">
+                                    <img src="./images/banner1.jpg" class="product-thumb" 
+                                    alt="">
+                                    <button class="card-btn">add to wishlist</button>
+                
+                                </div>
+                            </div>
+                        
+                            <div class="slide-card">
+                                <div class="slide-image">
+                                   
+                                    <img src="./images/banner2.jpg" class="product-thumb" 
+                                    alt="">
+                                    <button class="card-btn">add to wishlist</button>
+                
+                                </div>
+                            </div>
+                            <div class="slide-card">
+                                <div class="slide-image">
+                                   
+                                    <img src="./images/banner3.jpg" class="product-thumb" 
+                                    alt="">
+                                    <button class="card-btn">add to wishlist</button>
+                
+                                </div>
+                            </div>
+                            <div class="slide-card">
+                                <div class="slide-image">
+                                   
+                                    <img src="./images/banner3.jpg" class="product-thumb" 
+                                    alt="">
+                                    <button class="card-btn">add to wishlist</button>
+                
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+
+                </div>
+                <div class="lg-col-5 md-col-9 sm-col-9">
+                    <div class="review-div">
+                        
+                        <div class="review">
+                            <div class="user_dp lg-col-3 sm-col-10">
+                                <img src="./images/banner1.jpg" alt="">
+                            </div>
+                            <div class="info">
+                                <h3>Jemes Brown</h3>
+                               
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam et facilis natus itaque, nisi nemo aperiam earum voluptatem, inventore fugit velit sint? Explicabo voluptatem soluta perferendis, voluptatum tenetur temporibus recusandae?</p>
+                                <div class="stars text-center">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star"></i>
+
+
+                                </div>
+                                
+                            </div>
+                           
+                        </div>
+
+                    </div>
+                    <div class="contact_us m-t-4">
+                        <h2 class="text-center">Choose Us Today</h2>
+                       <form action="" method="post">
+                        <div class="form-input">
+                            <select name="" id="">
+                            <option value="">pick a title</option>
+                            <option value="">Mr</option>
+                            <option value="">Mis</option>
+                            <option value="">Mrs</option>
+                            <option value=""></option>
+
+                            </select>
+                        </div>
+                        <div class="form-input">
+
+                            <input type="text" name="name" placeholder="Enter  Full Name">
+                        </div>
+
+                        <div class="form-input">
+
+                            <input type="text" name="email" placeholder="Enter Email">
+                        </div>
+                        <div class="form-input">
+
+                            <input type="text" name="name" placeholder="Phone Number">
+                        </div>
+                        <div class="row">
+                            <div class="lg-col-4 ms-col-8">
+                                <button>book Appointment</button>
+                            </div>
+                            <div class="lg-col-4 ms-col-8">
+                                <button>book Service</button>
+                            </div>
+                        </div>
+
+
+                       </form>
+                    </div>
+    
+                    
+                </div>
+            </div>
+        </section>
+        <div class="md-d-none" style="height: 100vh;"></div>
+        <section class="price row">
+            <div class="lg-col-5 sm-col-10 ">
+
+                <div class="packages ">
+                    <div class="vatual package hover-animate">
+                        <div class="package-name">
+                            <h2>Virtual Costomer</h2>
+                        </div>
+                        <div class="package-list">
+                             <i class="bi bi-check2-all"></i>
+                             <h3>Professional Cleaning service</h3>
+                        </div>
+                        <div class="package-list">
+                            <i class="bi bi-check2-all"></i>
+                            <h3>Residential and Commercial Cleaning</h3>
+                       </div>
+                       <div class="package-list">
+                            <i class="bi bi-check2-all"></i>
+                            <h3>Deep cleaning & Regular Maintenace</h3>
+                        </div>
+                        <div class="package-list">
+                            <i class="bi bi-check2-all"></i>
+                            <h3>Home, Office, Apartment, and more</h3>
+                        </div>
+                        <div class="package-list">
+                            <i class="bi bi-check2-all"></i>
+                            <h3>Fully insered and Trained staff</h3>
+                        </div>
+                        <div class="package-list">
+                            <i class="bi bi-check2-all"></i>
+                            <h3>Customized Cleaning Plans</h3>
+                        </div>
+                        <div class="package-list">
+                            <i class="bi bi-check2-all"></i>
+                            <h3>Flexible Scheduling</h3>
+                        </div>
+                        <div class="worth m-t-2" style="background: rgba(208, 191, 224,.5); padding: 0.2em 0;">
+                            <span style="text-decoration: line-through;  margin-left: 10px;">NGN 20,000</span>
+                            <h3 class="text-center">NGN 10,000</h3>
+                        </div>
+                    </div>
+                    <div class="vip package hover-animate">
+                        <div class="package-name">
+                            <h2>V.I.P Costomer</h2>
+                        </div>
+                        <div class="package-list">
+                             <i class="bi bi-check2-all"></i>
+                             <h3>Professional Cleaning service</h3>
+                        </div>
+                        <div class="package-list">
+                            <i class="bi bi-check2-all"></i>
+                            <h3>Residential and Commercial Cleaning</h3>
+                       </div>
+                       <div class="package-list">
+                            <i class="bi bi-check2-all"></i>
+                            <h3>Deep cleaning & Regular Maintenace</h3>
+                        </div>
+                        <div class="package-list">
+                            <i class="bi bi-check2-all"></i>
+                            <h3>Home, Office, Apartment, and more</h3>
+                        </div>
+                        <div class="package-list">
+                            <i class="bi bi-check2-all"></i>
+                            <h3>Fully insered and Trained staff</h3>
+                        </div>
+                        <div class="package-list">
+                            <i class="bi bi-check2-all"></i>
+                            <h3>Customized Cleaning Plans</h3>
+                        </div>
+                        <div class="package-list">
+                            <i class="bi bi-check2-all"></i>
+                            <h3>Flexible Scheduling</h3>
+                        </div>
+                        <div class="worth m-t-2" style="background: rgba(208, 191, 224,.5); padding: 0.2em 0;">
+                            <span style="text-decoration: line-through; margin-left: 10px;">NGN 50,000</span>
+                            <h3 class="text-center">NGN 30,000</h3>
+                        </div>
+                    </div>
+                   
+
+                </div>
+
+            </div>
+            <div class="lg-col-4 sm-col-10 ">
+                <h2>Laundry service</h2>
+                <div class="laundry">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td style="width: 120px;"><img src="./images/download (5).jpg" alt=""></td>
+                                <td>Shirt</td>
+                                <td>NGN 150</td>
+                            </tr>
+                            <tr>
+                                <td><img src="./images/download (6).jpg" alt=""></td>
+                                <td>Trouser</td>
+                                <td>NGN 150</td>
+                            </tr>
+                            <tr>
+                                <td><img src="./images/download (4).jpg" alt=""></td>
+                                <td>Jenes</td>
+                                <td>NGN 200</td>
+                            </tr>
+                            <tr>
+                                <td><img src="./images/download (8).jpg" alt=""></td>
+                                <td>Blanket</td>
+                                <td>NGN 500</td>
+                            </tr>
+                            <tr>
+                                <td><img src="./images/download (8).jpg" alt=""></td>
+                                <td>Suit</td>
+                                <td>NGN 700</td>
+                            </tr>
+                            <tr>
+                                <td><img src="./images/download (5).jpg" alt=""></td>
+                                <td>Pickup</td>
+                                <td>free</td>
+                            </tr>
+                            <tr>
+                                <td><img src="./images/download (5).jpg" alt=""></td>
+                                <td>Delievery</td>
+                                <td>free</td>
+                            </tr>
+                            
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        
+       
+    </main>
+    
+    <script src="./king.io/js/header.js"></script>
+    <script>
+        const productcontainers = [...document.querySelectorAll('.slide-container')]
+        const prebtn = [...document.querySelectorAll('.pre-btn')]
+        const nxtbtn = [...document.querySelectorAll('.nxt-btn')]
+    
+        productcontainers.forEach((item, i) => {
+            let containerdimentiontios = item.getBoundingClientRect();
+            let containerWidth =  containerdimentiontios.width;
+    
+            nxtbtn[i].addEventListener('click', () => {
+                item.scrollLeft += containerWidth 
+            })
+            prebtn[i].addEventListener('click', () => {
+                item.scrollLeft -= containerWidth 
+            })
+            
+        });
+    </script>
+</body>
+</html>

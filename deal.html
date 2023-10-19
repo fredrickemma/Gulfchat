@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./king.io/css/main.css">
+    <style>
+        .col{
+            max-width: 700px;
+            width: 90%;
+            gap: 10px;
+            margin: 0 !important;
+
+        }
+        .col div {
+            
+           
+            height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .col div h3{
+            background: white;
+            border-radius: 50%;
+            padding: 2em;
+        }
+        .mtn{
+            background: yellow;
+            color: yellow;
+        }
+        .glo{
+            background: green;
+            color: green;
+        }
+        .airtel{
+            background: red;
+            color: red;
+        }
+        .moble{
+            background: black;
+            color: black;
+        }
+        .log{
+            width: 100%;
+            height: fit-content;
+            min-height: 100vh;
+           
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7)),url('./images/banner2.jpg') ;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            margin: 0;
+        }
+        .ani{
+            
+            transform: translateX(80%) translateY(-20%) scale(.20);
+            
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="content-center log">
+        <div class="grid-flex-col col ani">
+            <div class="mtn">
+                <h3>MTN</h3>
+            </div>
+            <div class="glo">
+                <h3>GLO</h3>
+            </div>
+            <div class="airtel">
+                <h3>AIRTEL</h3>
+            </div>
+            <div class="moble">
+                <h3>9 MOBILE</h3>
+            </div>
+        </div>
+
+    </div>
+    <div class="box" style="background-color: black; width: 1200px; padding: 350px"></div>
+    
+</body>
+</html>

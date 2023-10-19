@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./king.io/css/main.css">
+    <style>
+        body{
+            background: linear-gradient( rgba(0,0,0,.8), rgba(0,0,0,.8)),url(./images/banner3.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            text-align: center;
+
+        }
+        main{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form{
+            background: #fff;
+            padding: 1.5em;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+            width: 95%;
+            max-width: 400px;
+            overflow: hidden;
+        }
+        .btn{
+            background: linear-gradient(45deg, blueviolet,lightgreen) ;
+            padding: 1.5rem;
+            border: none;
+            border-radius: 20px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1em;
+            margin-top: 10px;
+           
+        }
+        form{
+            display: flex;
+            align-items: center;
+           gap: 30px;
+            
+        }
+        label{
+            display: block;
+            text-align: left;
+            margin: 10px;
+            margin-top: 0;
+        }
+        input,select{
+            width: 100%;
+            padding: 1em;
+            background-color: transparent;
+            border: 3px solid #8a2be2;
+            border-radius: 15px;
+            font-size: 1em;
+            font-weight: bold;
+           opacity: 0.5;
+        }
+        option{
+            background: #8a2be2;
+            color: white;
+           
+        }
+    article{
+        min-width: 100% !important;
+       
+    }
+       
+        .span{
+            color: #8a2be2;
+            font-size: 12px;
+            text-shadow: 2px 5px 10px rgba(0, 0, 0, 0.8);
+            text-align: right;
+           
+            
+        }
+        .loading{
+            background: linear-gradient(50deg, blueviolet,lightgreen) ;
+            padding: 10px;
+            border-radius: 15px;
+            margin-top: 10px;
+        }
+        .form-group{
+            margin-top: 10px;
+        }
+        .choose{
+            background-color: transparent;
+            border: 3px solid #8a2be2;
+            padding: 1em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .choose button{
+            background-color: transparent;
+            border: 3px solid #8a2be2;
+            color: #8a2be2;
+            border-radius: 15px;
+
+            font-weight: 700;
+            font-size: 1em;
+            padding: 1rem;
+
+
+        }
+        .choose button:hover{
+            background-color: #8a2be2;
+           
+            color: #fff;
+
+        }
+        .or{
+            border-top: 2px solid rgba(0, 0, 0,0.5);
+            width: 100%;
+            position: relative;
+
+        }
+        .or span{
+          
+            background-color: #fff;
+            padding: 1rem;
+
+        }
+        .o{
+            order: -1;
+        }
+       
+    </style>
+    
+</head>
+<body>
+    <main class="relative">
+        <a href="./deal.html" class="btn absolute top-1 right-1"> Our Offers</a>
+        <div class="form">
+            <div class="loading"></div>
+            <form action="" method="post">
+                <article id="first">
+                    <div class="form-group">
+                        <select name="" id="">
+                            <option value=""><h4>------Network--------</h4></option>
+                            <option value="MTN">MTN</option>
+                            <option value="GLO">GLO</option>
+                            <option value="9MOBILE">9 MOBILE</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+            
+                        <div class="span">
+                            <span>Optional*</span>
+                        </div>
+                        
+                        <select name="" id="">
+                            <option value=""><h4>------Offer--------</h4></option>
+                            <option value="MTN">MTN</option>
+                            <option value="GLO">GLO</option>
+                            <option value="9MOBILE">9 MOBILE</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        
+                       <input type="number" name="" id="" placeholder="Amount">
+                    </div>
+                    <div class="content-center">
+                        <button class="btn" id="button" type="button" data-next="pay-choose"> submit</button>
+    
+                    </div>
+
+                </article>
+                <article id="pay-choose">
+                    <div class="choose">
+                        <button id="button" data-next="account" type="button">wallet</button>
+                        <div class="or">
+                            <span>or</span>
+                        </div>
+                        <button id="button" data-next="card" type="button">card</button>
+                    </div>
+                    
+
+                </article>
+                <article id="account" >
+                    <div class="choose"> 
+                        <h2>login into your account</h2>
+                        <div class="form-group">
+                            <input type="text" name="" id="" placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="" id="" placeholder="Password">
+                        </div>
+                        <button id="button" data-next="funds" type="button">card</button>
+
+                    </div>
+                </article>
+                <article id="funds" >
+                    <div class="choose"> 
+                        
+                        <div class="form-group">
+                            <h3 class="m-b-2">Insufient funds</h3>
+                            <button id="button" data-next="card" type="button" >Use card</button>
+
+                        </div>
+                    </div>
+                </article>
+                <article id="card" >
+                    <div class="choose">
+                        <div class="form-group">
+                            <input type="text" name="" id="" placeholder="card number">
+                        </div> 
+                        
+                        <div class="form-group">
+                            <button id="button" data-next="account" type="button" >Use card</button>
+                        </div>
+                    </div>
+                </article>
+
+                
+            </form>
+            <div class="loading"></div>
+        </div>
+
+    </main>
+    
+</body>
+<script>
+    var buttons = document.querySelectorAll("#button");
+    buttons.forEach(button => {
+        let active = button.dataset.next;
+        button.addEventListener('click',function () {
+            let next = document.getElementById(active);
+            console.log(next)
+        
+            next.classList.toggle('o')
+            const alldivs = document.querySelectorAll('article');
+            alldivs.forEach(div => {
+                if(div.id !== active){
+                    div.classList.remove('o')
+                }
+                
+            });
+            
+            
+        })
+        
+    });
+
+
+</script>
+</html>
